@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -125 200 215">
+  <defs>
+    <linearGradient id="glowGrad" gradientUnits="userSpaceOnUse" x1="0" y1="-105" x2="0" y2="70">
+      <stop offset="0%" stop-color="#FF9E46" />
+      <stop offset="100%" stop-color="#FF6A00" />
+    </linearGradient>
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Intersecting network mesh lines -->
+  <g stroke="#FF9E46" stroke-width="1.5" opacity="0.4">
+    <line x1="0" y1="70" x2="-80" y2="-60" />
+    <line x1="0" y1="70" x2="80" y2="-60" />
+    <line x1="0" y1="-30" x2="-80" y2="-60" />
+    <line x1="0" y1="-30" x2="80" y2="-60" />
+    <line x1="-40" y1="5" x2="0" y2="-100" />
+    <line x1="40" y1="5" x2="0" y2="-100" />
+  </g>
+
+  <!-- Outer chevron wings (V-shape structure) -->
+  <path d="M -80,-60 L 0,70 L 80,-60" fill="none" stroke="url(#glowGrad)" stroke-width="3" opacity="0.7" />
+
+  <!-- Central action pillar -->
+  <line x1="0" y1="65" x2="0" y2="-90" stroke="url(#glowGrad)" filter="url(#neonGlow)" stroke-width="6" stroke-linecap="round" />
+
+  <!-- Upward growth arrowhead -->
+  <path d="M -20,-80 L 0,-105 L 20,-80" fill="none" stroke="url(#glowGrad)" filter="url(#neonGlow)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Connected data nodes -->
+  <g fill="url(#glowGrad)" filter="url(#neonGlow)">
+    <circle cx="0" cy="65" r="7" />
+    <circle cx="0" cy="-30" r="5" />
+    <circle cx="-40" cy="5" r="4" />
+    <circle cx="40" cy="5" r="4" />
+    <circle cx="-80" cy="-60" r="4" />
+    <circle cx="80" cy="-60" r="4" />
+  </g>
+</svg>
