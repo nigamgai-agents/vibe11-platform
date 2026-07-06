@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "github": {
+      "comment": "Optional — the gh CLI covers most GitHub needs. Enable for issue/PR search across org repos.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}" }
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
+      }
+    },
+    "datadog": {
+      "comment": "Community server — swap for your org's preferred Datadog MCP server if you have one.",
+      "command": "npx",
+      "args": ["-y", "@winor30/mcp-server-datadog"],
+      "env": {
+        "DATADOG_API_KEY": "${DATADOG_API_KEY}",
+        "DATADOG_APP_KEY": "${DATADOG_APP_KEY}"
+      }
+    },
+    "jira": {
+      "comment": "Atlassian Remote MCP server (OAuth on first use).",
+      "type": "sse",
+      "url": "https://mcp.atlassian.com/v1/sse"
+    }
+  }
+}

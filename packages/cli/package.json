@@ -1,0 +1,28 @@
+{
+  "name": "vibe11",
+  "version": "0.0.1",
+  "description": "Vibe11 — autonomous maintenance agents for AI-built products. `vibe11 init` installs the maintenance kit into your repo.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "vibe11": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@vibe11/kit": "*",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

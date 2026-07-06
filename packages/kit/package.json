@@ -1,0 +1,9 @@
+{
+  "name": "@vibe11/kit",
+  "version": "0.0.1",
+  "description": "The Vibe11 maintenance kit: prebuilt agents, playbooks, hooks, and memory conventions installed into a repo by `vibe11 init`.",
+  "license": "MIT",
+  "files": [
+    "templates"
+  ]
+}
