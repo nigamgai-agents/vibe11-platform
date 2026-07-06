@@ -71,6 +71,35 @@ vibe11-platform/
     plan.md             # this file
 ```
 
+## Enterprise expansion — memory as the control plane
+
+The workstation pain ("what is it learning?") generalizes up a ladder:
+
+1. **Dev + repo** (v0): `vibe11 memory` CLI. Built.
+2. **Team** (v1): app.vibe11.ai — cross-repo memory browser, learning feed,
+   merge rate, memory health.
+3. **Enterprise**: a governance control plane for agentic engineering
+   knowledge. Requirements:
+   - **Hierarchical memory**: org conventions → team → repo runbook, with
+     inheritance/overrides (mirrors CLAUDE.md hierarchy). An "org brain" repo
+     holds promoted knowledge: the same lesson learned in N repos becomes an
+     org convention.
+   - **Governance via existing git controls** (no new infra to certify):
+     CODEOWNERS on memory files = human review of what agents learn; branch
+     protection = approval workflow; signed commits = provenance.
+   - **Memory is an attack surface**: a PR that edits the runbook is a prompt
+     injection future agents will obey. Review gates + per-entry provenance
+     are security controls, not conveniences.
+   - **Secrets/PII hygiene**: agents must never write credentials, tokens, or
+     customer data into memory files (kit rule from day one, not an
+     enterprise add-on).
+   - **RBAC, audit export, retention** for the hosted surface (SOC 2 / AI-act
+     style documentation of automated actions).
+   - **Vendor-neutral system of record**: memory is markdown + git, so Vibe11
+     can govern what ANY vendor's agent learns — the literal "System of
+     Action" position. Enterprise may buy visibility/governance before
+     autonomous fixes; startups buy fixes first. Same surface, two wedges.
+
 ## Milestone 1 — "kit extracted, runs on one repo" (~2 weeks)
 
 Goal: `npx vibe11 init` on a real vibe-coded repo, then `vibe11 run deps`

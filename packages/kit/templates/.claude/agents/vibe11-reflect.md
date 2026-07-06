@@ -31,6 +31,12 @@ gets smarter instead of repeating itself.
 
 - The runbook records what is NOT derivable from the code. Don't restate
   what a reader could get from the diff itself.
+- **Never write secrets, tokens, credentials, connection strings, PII, or
+  customer data into memory files.** Reference where they live instead
+  ("rotate the key in 1Password › infra vault"). Memory is versioned and
+  shared; treat every entry as readable by the whole org, forever.
+- Every entry carries provenance: link the PR, commit, or incident that
+  taught it. Unattributed memory is untrusted memory.
 - Never delete incident history; compress it.
 - Runbook edits ride along on the fix's PR branch when one is open; otherwise
   they go on `vibe11/reflect-<date>`.

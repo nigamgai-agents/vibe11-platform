@@ -27,6 +27,9 @@ maintenance session, human- or agent-driven.
   record what broke, the root cause, the fix, and a prevention note.
 - Update existing runbook entries rather than appending near-duplicates. The
   runbook is a living document, not a log file.
+- Never write secrets, tokens, credentials, PII, or customer data into
+  CLAUDE.md or the runbook — reference their storage location instead.
+  Every memory entry links the PR/commit that taught it (provenance).
 
 ## Style
 
